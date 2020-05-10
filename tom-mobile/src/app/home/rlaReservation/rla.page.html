@@ -1,0 +1,195 @@
+<ion-content>
+
+  <ion-item>
+    <ion-label>Regions</ion-label>
+    <ion-select name="selectedRegion" [(ngModel)]="selectedRegion" (ionChange)="getSelectedRegion()">
+      <ion-select-option *ngFor="let rg of regions | async " [value]="rg">{{rg.name}}</ion-select-option>
+    </ion-select>
+  </ion-item>
+
+  <ion-item>
+    <ion-label>Sous Regions</ion-label>
+    <ion-select name="selectedSousRegion" [(ngModel)]="selectedSousRegion" (ionChange)="getSelectedSousRegion()">
+      <ion-select-option *ngFor="let sr of sousRegions " [value]="sr">{{sr.name}}</ion-select-option>
+    </ion-select>
+  </ion-item>
+
+<!--Transport Names-->
+  <ion-grid [hidden]="hide">
+    <ion-row>
+       <ion-label style="margin-left: 10px ;">
+         Transports
+       </ion-label>
+    </ion-row>
+    <ion-row>
+      <ion-col size="3"  *ngFor="let tr of transports ; let i=index">
+        <ion-list>
+          <ion-button size="small" [fill]="myTrButtonFills[i]"  color="dark" mode="md" (click)="getSelectedTransport(tr,i)">
+            <ion-label>{{tr.name}}</ion-label>
+          </ion-button>
+        </ion-list>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+  <ion-item-divider mode="ios"[hidden]=hideTrKeys>
+  </ion-item-divider>
+<!-- Transport Keys-->
+  <ion-grid>
+    <ion-row>
+      <ion-col size="3" *ngFor="let t of trmap | keyvalue">
+          <ion-button size="small" [fill]="myTkButtonFills[t.key]"   mode="md" (click)="getSelectedTrKey(t.key)">
+            <ion-label>{{t.key}}</ion-label>
+          </ion-button>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+  <ion-item-divider mode="ios" [hidden]=hideTrValues >
+  </ion-item-divider>
+  <!-- transport Values  -->
+  <ion-grid>
+    <ion-row>
+      <ion-col size="3" *ngFor="let v of trValues">
+          <ion-button size="small" mode="md" [fill]="myTvButtonFills[v]"  (click)="getSelectedTrValue(v)">
+            <ion-label>{{v}}</ion-label>
+          </ion-button>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+  <ion-item-divider [hidden]="hide" mode="ios">
+  </ion-item-divider>
+<!--Distribution Names-->
+<ion-grid [hidden]="hide">
+  <ion-row>
+     <ion-label style="margin-left: 10px ;">
+       Distributions
+     </ion-label>
+  </ion-row>
+  <ion-row>
+    <ion-col size="3" *ngFor="let d of dPrincipales  ; let i=index">
+      <ion-list>
+        <ion-button size="small" color="dark" [fill]="myDpButtonFills[i]" mode="md" (click)="getSelectedDp(d,i)">
+          <ion-label>{{d.name}}</ion-label>
+        </ion-button>
+      </ion-list>
+    </ion-col>
+  </ion-row>
+</ion-grid>
+<ion-item-divider mode="ios"[hidden]=hideDpKeys>
+</ion-item-divider>
+<!-- Distribution Keys-->
+<ion-grid>
+  <ion-row>
+    <ion-col size="3" *ngFor="let item of dpmap | keyvalue">
+        <ion-button size="small"   mode="md" [fill]="myDpkButtonFills[item.key]"(click)="getSelectedDpKey(item.key)">
+          <ion-label>{{item.key}}</ion-label>
+        </ion-button>
+    </ion-col>
+  </ion-row>
+</ion-grid>
+<ion-item-divider mode="ios" [hidden]=hideDpValues >
+</ion-item-divider>
+<!-- Distribution Values  -->
+<ion-grid>
+  <ion-row>
+    <ion-col size="3" *ngFor="let x of dpValues ">
+        <ion-button size="small" mode="md" [fill]="myDpvButtonFills[x]" (click)="getSelectedDpValue(x)">
+          <ion-label>{{x}}</ion-label>
+        </ion-button>
+    </ion-col>
+  </ion-row>
+</ion-grid>
+
+
+
+<ion-item-divider [hidden]="hide" mode="ios">
+</ion-item-divider>
+<!--Distribution Names-->
+<ion-grid [hidden]=hide>
+<ion-row>
+   <ion-label style="margin-left: 10px ;">
+     Distributions Secondaires
+   </ion-label>
+</ion-row>
+<ion-row>
+  <ion-col size="3" *ngFor="let d of dSecondaires  ; let i=index">
+    <ion-list>
+      <ion-button size="small" color="dark" [fill]="myDsButtonFills[i]" mode="md" (click)="getSelectedDs(d,i)">
+        <ion-label>{{d.name}}</ion-label>
+      </ion-button>
+    </ion-list>
+  </ion-col>
+</ion-row>
+</ion-grid>
+<ion-item-divider mode="ios"[hidden]=hideDsKeys>
+</ion-item-divider>
+<!-- Distribution Keys-->
+<ion-grid>
+<ion-row>
+  <ion-col size="3" *ngFor="let item of dsmap | keyvalue">
+      <ion-button size="small" [fill]="myDskButtonFills[item.key]"   mode="md" (click)="getSelectedDsKey(item.key)">
+        <ion-label>{{item.key}}</ion-label>
+      </ion-button>
+  </ion-col>
+</ion-row>
+</ion-grid>
+<ion-item-divider mode="ios" [hidden]=hideDsValues >
+</ion-item-divider>
+<!-- Distribution Values  -->
+<ion-grid>
+<ion-row>
+  <ion-col size="3" *ngFor="let x of dsValues ">
+      <ion-button size="small" [fill]="myDsvButtonFills[x]" mode="md" (click)="getSelectedDsValue(x)">
+        <ion-label>{{x}}</ion-label>
+      </ion-button>
+  </ion-col>
+</ion-row>
+</ion-grid>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+  <!--
+  
+
+
+      <ion-item>
+        Distributions Principales
+        <ion-segment   scrollable="{{scrollDpName}}" value="heart">
+          <ion-segment-button (click)="getSelectedDp(d)" *ngFor="let d of dPrincipales " mode="md"  [value]="">
+            {{d.name}}
+          </ion-segment-button>
+          </ion-segment>
+      </ion-item>
+
+      <ion-item>
+        
+        <ion-segment   scrollable="{{scrollDpKey}}" value="heart">
+          <ion-segment-button (click)="getSelectedDpKey(item.key)" mode="md"  *ngFor="let item of dpmap | keyvalue" >
+            {{item.key}}
+          </ion-segment-button>
+          </ion-segment>
+      </ion-item>
+
+      <ion-item>
+        
+        <ion-segment   scrollable="{{scrollDpValue}}" value="heart">
+          <ion-segment-button (click)="getSelectedDpValue(x)" *ngFor="let x of dpValues " mode="md"  [value]="">
+            {{x}}
+          </ion-segment-button>
+          </ion-segment>
+      </ion-item>
+      -->
+</ion-content>

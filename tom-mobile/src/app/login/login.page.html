@@ -1,0 +1,80 @@
+<ion-header>
+
+</ion-header>
+
+<ion-content style="--background: white;">
+  <br>
+  <br>
+  <div class="container h-100">
+    <div class="d-flex justify-content-center h-100">
+      <div class="user_card">
+        <div class="d-flex justify-content-center">
+          <div class="brand_logo_container">
+            <img src="\assets\img\todo.jpg" class="brand_logo" alt="Logo">
+          </div>
+        </div>
+
+        <div class="d-flex justify-content-center form_container">
+
+          <form [formGroup]="loginForm">
+            <font size="6" class="d-flex justify-content-center" color="#6BA5DC"><strong>Tom-Mobile</strong></font> <br>
+            <br>
+
+            <div class="input-group mb-3">
+              <div class="input-group-append">
+                <span class="input-group-text">
+                  <ion-icon class="fas fakey" name="person"></ion-icon>
+                </span>
+              </div>
+
+              <ion-input type="text" name="" class="form-control input_user" formControlName='userName' value=""
+                placeholder="username" name="username"
+                [ngClass]="{ 'is-invalid': submitted && formValidation.userName?.errors }"></ion-input>
+              <div *ngIf="submitted && formValidation.userName?.errors" class="invalid-feedback">
+                <div *ngIf="formValidation.userName?.errors.required">username is required</div>
+                <div *ngIf="formValidation.userName.errors.cannotContainSpace">Username can not contain space.</div>
+              </div>
+            </div>
+
+
+              <div class="input-group mb-2">
+                <div class="input-group-append">
+                  <span class="input-group-text">
+                    <ion-icon name="key"></ion-icon>
+                  </span>
+                </div>
+ 
+
+
+                  
+                <ion-input type="password" name="" class="form-control input_pass" formControlName='password' [(ngModel)]="password" 
+                  placeholder="password" name="password"  [type]="showPassword ? 'text' : 'password'"
+                  [ngClass]="{ 'is-invalid': submitted && formValidation.password?.errors }"></ion-input>
+                  <button  (click)="onPasswordToggle()" ion-button clear small item-end icon-only>
+                    <ion-icon [name]="showPassword ? 'eye-outline' : 'eye-off-outline'"></ion-icon>
+                  </button>
+                   
+                <div *ngIf="submitted && formValidation.password?.errors" class="invalid-feedback">
+                  <div *ngIf="formValidation.password?.errors.required">password is required</div>
+                </div>
+              </div>
+
+           
+            <div class="form-group">
+              <div class="custom-control custom-checkbox">
+                <input type="checkbox" class="custom-control-input" id="customControlInline">
+                <label class="custom-control-label" for="customControlInline">Remember me</label>
+              </div>
+            </div>
+            <div class="d-flex justify-content-center mt-3 login_container">
+              <button (click)="submit()" type="button" name="button" class="btn login_btn">Login</button>
+            </div>
+          </form>
+        </div>
+
+
+      </div>
+    </div>
+  </div>
+
+</ion-content>

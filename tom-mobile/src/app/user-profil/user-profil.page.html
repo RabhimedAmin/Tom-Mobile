@@ -1,0 +1,66 @@
+<ion-header>
+  <ion-toolbar color="purple">
+    <ion-buttons>
+    <ion-button routerLink="/home">
+    <ion-icon class="iconBarSize" slot ="start" name="arrow-back-circle-outline" class="customIconProfil"  ></ion-icon>
+    </ion-button>
+  </ion-buttons>
+    <ion-title mode="ios">Profil</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+
+  <div class="login-box">
+
+    <form (ngSubmit)="save()" #saveForm="ngForm">
+      <ion-row>
+        <ion-col>
+          <ion-list inset>
+
+            <ion-item>
+              <ion-label   name="name"> Username</ion-label>
+              <small>{{user.firstName}}</small>
+            </ion-item>
+
+            <ion-item>
+              <ion-label name="email"  required> Email</ion-label>
+              <small>{{user.Email}}</small>
+            </ion-item>
+
+           
+            <ion-item>
+              <ion-label  name="firstName" >First Name</ion-label>
+              <small>{{user.firstName}}</small>
+            </ion-item>
+
+            <ion-item>
+              <ion-label  name="lastName"  required> Last Name</ion-label>
+              <small>{{user.lastName}}</small>
+            </ion-item>
+
+            <ion-item>
+              <ion-label  name="date"  required> Date of Birth </ion-label>
+              <ion-datetime id="dynamicDisabled" displayFormat="MM-DD-YYYY"  readOnly="true" value="{{user.birthDate}}"></ion-datetime>
+              
+            </ion-item>
+
+            <ion-item>
+              <ion-label   name="contact"  required> Contact</ion-label>
+              <small>{{user.Contact}}</small>
+            </ion-item>
+        
+            <ion-item>
+              <ion-label   name="change password"  required> Change password</ion-label>
+              <ion-icon name="arrow-forward-outline"></ion-icon>            
+            </ion-item>
+          </ion-list>
+        </ion-col>
+      </ion-row>
+
+      
+
+    </form>
+  </div>
+
+</ion-content>

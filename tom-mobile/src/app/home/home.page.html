@@ -1,0 +1,59 @@
+<ion-app>
+
+    <ion-menu contentId="my-content" class="my-custom-menu">
+      <ion-header>
+        <ion-toolbar color="dark">
+          <ion-title mode="ios">
+            <ion-label class="ion-text-center">
+              <b >Welcome OT</b>
+            </ion-label>
+          </ion-title>
+        </ion-toolbar>
+      </ion-header>
+      <ion-content >
+        <ion-list >
+          <ion-menu-toggle auto-hide="true">
+              <ion-item button  *ngFor= "let menu of menus"  (click)="Goto(menu)"  color="light" detail="true" lines="full" type="button" >
+                <ion-icon slot="start" name="{{menu.icon}}"></ion-icon>
+         <ion-label class="my-label" slot="start">
+              {{menu.name}}
+            </ion-label>
+          </ion-item>
+          </ion-menu-toggle>
+    
+        </ion-list>
+    
+      </ion-content>
+    </ion-menu>
+
+    <ion-router-outlet id="my-content"></ion-router-outlet>
+    
+  <ion-tabs >
+    <ion-header>
+      <ion-toolbar color="{{tbColor}}">
+        <ion-title mode="ios"> {{tbTitle}}</ion-title>
+        <ion-buttons slot="start">
+          <ion-menu-button autoHide="false"> </ion-menu-button>
+          <ion-back-button auto-hide="false"> </ion-back-button>
+        </ion-buttons>
+        <ion-buttons slot="end">
+          <ion-button routerLink="/profil" >
+          <ion-icon  slot="end" class="buttonShadow" color="light" name="person-circle-outline"></ion-icon>
+        </ion-button>
+        </ion-buttons>
+      </ion-toolbar>
+    </ion-header>
+
+    <ion-tab-bar slot="bottom">
+      <ion-tab-button tab="list?myParameter=todo">
+        <ion-label>To do</ion-label>
+        <ion-icon name="create-outline"></ion-icon>
+      </ion-tab-button>
+
+      <ion-tab-button tab="list?myParameter=done">
+        <ion-label>Done</ion-label>
+        <ion-icon name="checkmark-done-outline"></ion-icon>
+      </ion-tab-button>
+    </ion-tab-bar>
+  </ion-tabs>
+</ion-app>

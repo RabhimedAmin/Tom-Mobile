@@ -1,0 +1,76 @@
+/*
+ * App Global CSS
+ * ----------------------------------------------------------------------------
+ * Put style rules here that you want to apply globally. These styles are for
+ * the entire app and not just one component. Additionally, this file can be
+ * used as an entry point to import other CSS/Sass files to be included in the
+ * output CSS.
+ * For more information on global stylesheets, visit the documentation:
+ * https://ionicframework.com/docs/layout/global-stylesheets
+ */
+
+/* Core CSS required for Ionic components to work properly */
+@import "~@ionic/angular/css/core.css";
+
+/* Basic CSS for apps built with Ionic */
+@import "~@ionic/angular/css/normalize.css";
+@import "~@ionic/angular/css/structure.css";
+@import "~@ionic/angular/css/typography.css";
+@import '~@ionic/angular/css/display.css';
+
+/* Optional CSS utils that can be commented out */
+@import "~@ionic/angular/css/padding.css";
+@import "~@ionic/angular/css/float-elements.css";
+@import "~@ionic/angular/css/text-alignment.css";
+@import "~@ionic/angular/css/text-transformation.css";
+@import "~@ionic/angular/css/flex-utils.css";
+@import '~bootstrap/dist/css/bootstrap.css';
+
+.ion-color-newColor {
+    --ion-color-base: var(--ion-color-newColor) !important;
+    --ion-color-base-rgb: var(--ion-color-newColor-rgb) !important;
+    --ion-color-contrast: var(--ion-color-newColor-contrast) !important;
+    --ion-color-contrast-rgb: var(--ion-color-newColor-contrast-rgb) !important;
+    --ion-color-shade: var(--ion-color-newColor-shade) !important;
+    --ion-color-tint: var(--ion-color-newColor-tint) !important;
+}
+
+
+.ion-color-oceanColor {
+    --ion-color-base: var(--ion-color-oceanColor) !important;
+    --ion-color-base-rgb: var(--ion-color-oceanColor-rgb) !important;
+    --ion-color-contrast: var(--ion-color-oceanColor-contrast) !important;
+    --ion-color-contrast-rgb: var(--ion-color-oceanColor-contrast-rgb) !important;
+    --ion-color-shade: var(--ion-color-oceanColor-shade) !important;
+    --ion-color-tint: var(--ion-color-oceanColor-tint) !important;
+}
+
+.ion-color-purple {
+    --ion-color-base: var(--ion-color-purple) !important;
+    --ion-color-base-rgb: var(--ion-color-purple-rgb) !important;
+    --ion-color-contrast: var(--ion-color-purple-contrast) !important;
+    --ion-color-contrast-rgb: var(--ion-color-purple-contrast-rgb) !important;
+    --ion-color-shade: var(--ion-color-purple-shade) !important;
+    --ion-color-tint: var(--ion-color-purple-tint) !important;
+}
+
+.ion-color-grisoft {
+    --ion-color-base: var(--ion-color-grisoft) !important;
+    --ion-color-base-rgb: var(--ion-color-grisoft-rgb) !important;
+    --ion-color-contrast: var(--ion-color-grisoft-contrast) !important;
+    --ion-color-contrast-rgb: var(--ion-color-grisoft-contrast-rgb) !important;
+    --ion-color-shade: var(--ion-color-grisoft-shade) !important;
+    --ion-color-tint: var(--ion-color-grisoft-tint) !important;
+}
+
+.customIconProfil{
+    font-size: 40px;
+ 
+}
+.iconBarSize {
+    font-size: 30px;
+  }
+
+  .buttonShadow{
+    --box-shadow:none;
+ }
